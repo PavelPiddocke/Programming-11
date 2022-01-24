@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="421.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gameofchance.Controller">
+   <MenuBar VBox.vgrow="NEVER">
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+           <MenuItem mnemonicParsing="false" onAction="#endProgram" text="Exit" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem fx:id="HelpAbout" mnemonicParsing="false" text="Pavel's Game of Chance" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+   <VBox prefHeight="398.0" prefWidth="430.0">
+      <children>
+         <HBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="430.0">
+            <children>
+               <Label alignment="CENTER" contentDisplay="CENTER" text="Welcome to Pavel's Game of Chance!">
+                  <font>
+                     <Font size="25.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <HBox prefHeight="48.0" prefWidth="430.0">
+            <children>
+               <VBox prefHeight="48.0" prefWidth="134.0">
+                  <children>
+                     <Label text="Please Enter your Bet:" />
+                     <Label text="You start with 100">
+                        <font>
+                           <Font name="System Italic" size="10.0" />
+                        </font>
+                        <padding>
+                           <Insets left="20.0" />
+                        </padding>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <TextField fx:id="txtBetAmount" alignment="CENTER" prefHeight="25.0" prefWidth="78.0" promptText="Bet Amount" />
+                  </children>
+               </VBox>
+               <VBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="83.0">
+                  <children>
+                     <Button fx:id="btnRoll" mnemonicParsing="false" onAction="#placeBet" text="Roll!" textFill="#ee0c0c">
+                        <font>
+                           <Font name="System Bold Italic" size="18.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+               <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <ImageView fx:id="diceImage" fitHeight="59.0" fitWidth="152.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="https://www.online-stopwatch.com/images/dice.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+         <HBox prefHeight="114.0" prefWidth="430.0">
+            <children>
+               <VBox alignment="CENTER" prefHeight="110.0" prefWidth="164.0">
+                  <children>
+                     <Label prefHeight="24.0" prefWidth="118.0" text="Will your roll be 3" />
+                     <Label prefHeight="18.0" prefWidth="158.0" text="and under or 4 and over?" />
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="103.0" prefWidth="124.0">
+                  <children>
+                     <Button fx:id="betOver" disable="true" mnemonicParsing="false" onAction="#betOverRoll" prefHeight="40.0" prefWidth="107.0" text="Bet Over" textFill="#d00c0c">
+                        <font>
+                           <Font name="System Bold Italic" size="19.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="55.0" prefWidth="158.0">
+                  <children>
+                     <Button fx:id="betUnder" disable="true" mnemonicParsing="false" onAction="#betUnderRoll" prefHeight="40.0" prefWidth="117.0" text="Bet Under" textFill="#da0e0e">
+                        <font>
+                           <Font name="System Bold Italic" size="19.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+         <HBox prefHeight="93.0" prefWidth="430.0">
+            <children>
+               <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label alignment="CENTER" text="Result">
+                        <font>
+                           <Font size="22.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox prefHeight="100.0" prefWidth="105.0">
+                  <children>
+                     <Label text="Dealer's Die" />
+                     <Label fx:id="dice1Result" text="0" textFill="#070de0">
+                        <font>
+                           <Font size="37.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox prefHeight="200.0" prefWidth="100.0">
+                  <children>
+                     <Label text="Your Die" />
+                     <Label fx:id="dice2Result" text="0" textFill="#03f207">
+                        <font>
+                           <Font size="37.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="105.0" prefWidth="113.0">
+                  <children>
+                     <Button fx:id="btnTryAgain" disable="true" mnemonicParsing="false" onAction="#tryAgain" prefHeight="39.0" prefWidth="109.0" text="Try Again" textFill="#e40505">
+                        <font>
+                           <Font name="System Bold Italic" size="18.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+         <HBox alignment="CENTER_LEFT" prefHeight="15.0" prefWidth="430.0">
+            <children>
+               <VBox alignment="CENTER" prefHeight="65.0" prefWidth="230.0">
+                  <children>
+                     <Label prefHeight="30.0" prefWidth="125.0" text="Game Result">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="65.0" prefWidth="246.0">
+                  <children>
+                     <Label text="Credit Balance">
+                        <font>
+                           <Font size="20.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+         <HBox prefHeight="33.0" prefWidth="430.0">
+            <children>
+               <VBox alignment="CENTER" prefHeight="68.0" prefWidth="241.0">
+                  <children>
+                     <Label fx:id="resultTxt" textFill="#011401">
+                        <font>
+                           <Font name="System Bold" size="30.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+               <VBox alignment="CENTER" prefHeight="68.0" prefWidth="140.0">
+                  <children>
+                     <Label fx:id="betBalance" prefHeight="66.0" prefWidth="105.0" text="100">
+                        <font>
+                           <Font name="System Bold" size="45.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+      </children>
+   </VBox>
+</VBox>

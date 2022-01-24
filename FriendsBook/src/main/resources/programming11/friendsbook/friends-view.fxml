@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="460.0" prefWidth="816.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programming11.friendsbook.FriendsController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox alignment="TOP_CENTER" prefHeight="28.0" prefWidth="776.0">
+      <children>
+      
+                <Label fx:id="welcomeText" prefHeight="46.0" prefWidth="317.0" text="Pavel's Friends Book">
+            <font>
+               <Font name="System Bold" size="31.0" />
+            </font></Label>
+      </children>
+   </HBox>
+   <HBox prefHeight="117.0" prefWidth="776.0">
+      <children>
+         <VBox prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <Label text="Enter Name:">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Label text="Enter Age:">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Label text="Enter City:">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Label prefHeight="27.0" prefWidth="104.0" text="Enter Gender:">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+               <Label text="Is a friend?">
+                  <VBox.margin>
+                     <Insets top="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </Label>
+            </children>
+         </VBox>
+         <VBox prefHeight="185.0" prefWidth="194.0">
+            <children>
+               <TextField fx:id="txtName" prefHeight="27.0" prefWidth="132.0" promptText="Name">
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+                  <VBox.margin>
+                     <Insets bottom="10.0" top="10.0" />
+                  </VBox.margin>
+               </TextField>
+               <TextField fx:id="txtAge" promptText="Age">
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+               </TextField>
+               <TextField fx:id="txtCity" prefHeight="27.0" prefWidth="223.0" promptText="City">
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+               </TextField>
+               <TextField fx:id="txtGender" promptText="Gender">
+                  <VBox.margin>
+                     <Insets bottom="10.0" />
+                  </VBox.margin>
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding>
+               </TextField>
+               <TextField fx:id="checkIsFriend" promptText="Yes/No" />
+            </children>
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="185.0" prefWidth="121.0">
+            <children>
+                <Button fx:id="btnAdd" onAction="#btnAddFriend" text="Add Friend">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin></Button>
+               <Button fx:id="btnRemove" mnemonicParsing="false" onAction="#btnRemoveFriend" text="Remove">
+                  <VBox.margin>
+                     <Insets top="20.0" />
+                  </VBox.margin>
+               </Button>
+            </children>
+         </VBox>
+         <VBox prefHeight="185.0" prefWidth="360.0">
+            <children>
+               <TextArea fx:id="txtFriendsDetails" prefHeight="200.0" prefWidth="200.0" />
+            </children>
+         </VBox>
+      </children>
+   </HBox>
+   <VBox prefHeight="6.0" prefWidth="776.0" />
+   <TableView fx:id="tableViewFriends" onMouseClicked="#clkSelectFriend" prefHeight="161.0" prefWidth="776.0">
+     <columns>
+       <TableColumn fx:id="colName" prefWidth="327.0" text="Name" />
+       <TableColumn fx:id="colGender" prefWidth="115.0" text="Gender" />
+         <TableColumn fx:id="colAge" prefWidth="60.0" text="Age" />
+         <TableColumn fx:id="colCity" prefWidth="185.0" text="City" />
+         <TableColumn fx:id="colIsFriend" prefWidth="83.0" text="Friends?" />
+     </columns>
+   </TableView>
+</VBox>
