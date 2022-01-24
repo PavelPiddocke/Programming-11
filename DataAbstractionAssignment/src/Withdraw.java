@@ -5,6 +5,7 @@ public class Withdraw {
     private Date date;
     private String account;
 
+    //Constructor for withdraw - just assign the values
     Withdraw(double amount, Date date, String account){
         this.amount = amount;
         this.date = date;

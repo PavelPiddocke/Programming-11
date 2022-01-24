@@ -25,7 +25,7 @@ public class Customer {
 
     }
     Customer(String name, int accountNumber, double checkDeposit, double savingDeposit){
-        //constructor code here
+        //constructor
         this.name = name;
         this.accountNumber = accountNumber;
         this.checkBalance = checkDeposit;
@@ -36,7 +36,7 @@ public class Customer {
     }
 
     public double deposit(double amt, Date date, String account){
-
+        //method to add funds to the correct account
         // Requires : amount, account
         // Modifies : this.deposits
         // Effects  : adds values to the deposits array
@@ -56,6 +56,7 @@ public class Customer {
 
     }
     public double withdraw(double amt, Date date, String account){
+        //method to withdraw funds from the correct account
         // Requires : amount, account
         // Modifies : this.withdraws
         // Effects  : removes value from the withdraws array
@@ -78,6 +79,7 @@ public class Customer {
     }
 
     private boolean checkOverdraft(double amt, String account){
+        // Method to check if the customer is overdrawn.
         // Requires : amount, account
         // Modifies : nothing
         // Effects  : returns balances in different accounts
@@ -109,7 +111,7 @@ public class Customer {
                 System.out.println(w);
             }
         }
-
+        //override toString to make a custom message about the balances
         public String toString () {
             return "Customer: " + this.name + " Account: " + accountNumber + " Savings Balance: " + savingBalance + " Checking Balance: " + checkBalance;
         }

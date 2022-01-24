@@ -5,6 +5,7 @@ public class Deposit {
     private Date date;
     private String account;
 
+    //constructor - just assign the values
     Deposit(double amount, Date date, String account){
         this.amount = amount;
         this.date = date;
