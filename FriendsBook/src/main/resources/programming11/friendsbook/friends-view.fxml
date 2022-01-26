@@ -32,17 +32,11 @@
                   <VBox.margin>
                      <Insets top="10.0" />
                   </VBox.margin>
-                  <padding>
-                     <Insets top="10.0" />
-                  </padding>
                </Label>
                <Label text="Enter Age:">
                   <VBox.margin>
-                     <Insets top="10.0" />
+                     <Insets top="20.0" />
                   </VBox.margin>
-                  <padding>
-                     <Insets top="10.0" />
-                  </padding>
                </Label>
                <Label text="Enter City:">
                   <VBox.margin>
@@ -60,7 +54,7 @@
                      <Insets top="10.0" />
                   </padding>
                </Label>
-               <Label text="Is a friend?">
+               <Label text="Phone Number">
                   <VBox.margin>
                      <Insets top="10.0" />
                   </VBox.margin>
@@ -73,25 +67,16 @@
          <VBox prefHeight="185.0" prefWidth="194.0">
             <children>
                <TextField fx:id="txtName" prefHeight="27.0" prefWidth="132.0" promptText="Name">
-                  <padding>
-                     <Insets top="10.0" />
-                  </padding>
                   <VBox.margin>
                      <Insets bottom="10.0" top="10.0" />
                   </VBox.margin>
                </TextField>
                <TextField fx:id="txtAge" promptText="Age">
-                  <padding>
-                     <Insets top="10.0" />
-                  </padding>
                   <VBox.margin>
                      <Insets bottom="10.0" />
                   </VBox.margin>
                </TextField>
                <TextField fx:id="txtCity" prefHeight="27.0" prefWidth="223.0" promptText="City">
-                  <padding>
-                     <Insets top="10.0" />
-                  </padding>
                   <VBox.margin>
                      <Insets bottom="10.0" />
                   </VBox.margin>
@@ -100,11 +85,8 @@
                   <VBox.margin>
                      <Insets bottom="10.0" />
                   </VBox.margin>
-                  <padding>
-                     <Insets top="10.0" />
-                  </padding>
                </TextField>
-               <TextField fx:id="checkIsFriend" promptText="Yes/No" />
+               <TextField fx:id="txtPhone" promptText="Phone" />
             </children>
          </VBox>
          <VBox alignment="CENTER" prefHeight="185.0" prefWidth="121.0">
@@ -122,7 +104,7 @@
          </VBox>
          <VBox prefHeight="185.0" prefWidth="360.0">
             <children>
-               <TextArea fx:id="txtFriendsDetails" prefHeight="200.0" prefWidth="200.0" />
+               <TextArea fx:id="txtFriendsDetails" prefHeight="175.0" prefWidth="121.0" promptText="Friend Details" />
             </children>
          </VBox>
       </children>
@@ -130,11 +112,11 @@
    <VBox prefHeight="6.0" prefWidth="776.0" />
    <TableView fx:id="tableViewFriends" onMouseClicked="#clkSelectFriend" prefHeight="161.0" prefWidth="776.0">
      <columns>
-       <TableColumn fx:id="colName" prefWidth="327.0" text="Name" />
-       <TableColumn fx:id="colGender" prefWidth="115.0" text="Gender" />
+       <TableColumn fx:id="colName" prefWidth="286.0" text="Name" />
+       <TableColumn fx:id="colGender" prefWidth="156.0" text="Gender" />
          <TableColumn fx:id="colAge" prefWidth="60.0" text="Age" />
-         <TableColumn fx:id="colCity" prefWidth="185.0" text="City" />
-         <TableColumn fx:id="colIsFriend" prefWidth="83.0" text="Friends?" />
+         <TableColumn fx:id="colCity" prefWidth="124.0" text="City" />
+         <TableColumn fx:id="colPhone" prefWidth="144.0" text="Phone" />
      </columns>
    </TableView>
 </VBox>

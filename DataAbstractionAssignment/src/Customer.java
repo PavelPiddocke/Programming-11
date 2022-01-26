@@ -36,6 +36,7 @@ public class Customer {
     }
 
     public double deposit(double amt, Date date, String account){
+
         //method to add funds to the correct account
         // Requires : amount, account
         // Modifies : this.deposits
@@ -56,6 +57,7 @@ public class Customer {
 
     }
     public double withdraw(double amt, Date date, String account){
+
         //method to withdraw funds from the correct account
         // Requires : amount, account
         // Modifies : this.withdraws
@@ -79,6 +81,7 @@ public class Customer {
     }
 
     private boolean checkOverdraft(double amt, String account){
+
         // Method to check if the customer is overdrawn.
         // Requires : amount, account
         // Modifies : nothing
