@@ -15,7 +15,7 @@ public class FriendsApplication extends Application {
 
         TableView table = new TableView<Friends>();
         Scene scene = new Scene(fxmlLoader.load(), 800, 500);
-        stage.setTitle("Pavel's Friends Book 0.1");
+        stage.setTitle("Pavel's Friends Book 0.2");
         stage.setScene(scene);
         stage.show();
     }
