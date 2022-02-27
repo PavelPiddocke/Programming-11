@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="programming11.gradecalculator.GradeCalculatorController">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#menuOpenFile" text="Open…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#menuSaveAs" text="Save As…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" onAction="#menuCloseAction" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#btnRemoveAssignment" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#menuAbout" text="About The Grade Calculator" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <TabPane layoutY="4.0" prefHeight="478.0" prefWidth="799.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Percentage">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="800.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="792.0">
+                                 <children>
+                                    <TextField fx:id="txtAssignment" prefHeight="26.0" prefWidth="424.0" promptText="Assignment Name">
+                                       <padding>
+                                          <Insets left="30.0" right="30.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="txtGrade" prefHeight="26.0" prefWidth="208.0" promptText="Grade %">
+                                       <padding>
+                                          <Insets left="30.0" right="30.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="txtWeight" prefHeight="26.0" prefWidth="200.0" promptText="Weight %">
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#btnAddAssignment" prefHeight="30.0" prefWidth="233.0" text="Enter Assignment" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="68.0" prefHeight="299.0" prefWidth="799.0">
+                                 <children>
+                                    <TableView fx:id="tableViewAssignments" prefHeight="170.0" prefWidth="797.0">
+                                      <columns>
+                                        <TableColumn fx:id="colAssignment" minWidth="300.0" prefWidth="500.0" text="Assignment" />
+                                        <TableColumn fx:id="colGrade" prefWidth="149.0" text="Grade" />
+                                          <TableColumn fx:id="colWeight" prefWidth="149.0" text="Weight" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                              <VBox alignment="CENTER" layoutY="367.0" prefHeight="51.0" prefWidth="490.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="437.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#calculatePercentGrade" prefHeight="30.0" prefWidth="168.0" text="Calculate Grade" />
+                                          <Label fx:id="txtPGradeResult" contentDisplay="CENTER" prefHeight="18.0" prefWidth="64.0" text="Grade" textAlignment="CENTER">
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text="\%">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" layoutX="497.0" layoutY="367.0" prefHeight="51.0" prefWidth="295.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnRemoveAssignment" text="Remove Selected Assignment" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Letter Grade">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="277.0" prefWidth="806.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="54.0" prefWidth="792.0">
+                                 <children>
+                                    <TextField fx:id="txtLetAssignment" prefHeight="26.0" prefWidth="424.0" promptText="Assignment Name">
+                                       <padding>
+                                          <Insets left="30.0" right="30.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <ChoiceBox fx:id="choiceGrade" prefWidth="150.0" />
+                                    <TextField fx:id="txtLetWeight" prefHeight="26.0" promptText="Weight">
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#btnAddLetAssignment" prefHeight="30.0" prefWidth="233.0" text="Enter Assignment" />
+                                 </children>
+                              </HBox>
+                              <HBox layoutY="68.0" prefHeight="299.0" prefWidth="799.0">
+                                 <children>
+                                    <TableView fx:id="tableViewLetAssignments" prefHeight="274.0" prefWidth="797.0">
+                                       <columns>
+                                          <TableColumn fx:id="colLetAssignment" minWidth="300.0" prefWidth="500.0" text="Assignment" />
+                                          <TableColumn fx:id="colLetGrade" prefWidth="149.0" text="Grade" />
+                                          <TableColumn fx:id="colLetWeight" prefWidth="149.0" text="Weight" />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </HBox>
+                              <VBox alignment="CENTER" layoutY="367.0" prefHeight="51.0" prefWidth="490.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="51.0" prefWidth="471.0">
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#calculateLetterGrade" prefHeight="30.0" prefWidth="168.0" text="Calculate Grade" />
+                                          <Label fx:id="txtLGradeResult" contentDisplay="CENTER" prefHeight="18.0" prefWidth="64.0" text="Grade">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                             <HBox.margin>
+                                                <Insets left="30.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" layoutX="497.0" layoutY="367.0" prefHeight="51.0" prefWidth="295.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#btnRemoveLetAssignment" text="Remove Selected Assignment" />
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="GPA">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="390.0" prefWidth="806.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="51.0" prefWidth="792.0">
+                                 <children>
+                                    <TextField fx:id="txtGPAAssignment" prefHeight="26.0" prefWidth="284.0" promptText="Assignment Name">
+                                       <padding>
+                                          <Insets left="30.0" right="30.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="txtGPAGrade" prefHeight="26.0" prefWidth="176.0" promptText="Grade pt.">
+                                       <padding>
+                                          <Insets left="30.0" right="30.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="txtGPAWeight" prefHeight="26.0" prefWidth="161.0" promptText="Weight %">
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="30.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                    <Button mnemonicParsing="false" onAction="#btnAddGPAAssignment" prefHeight="30.0" prefWidth="233.0" text="Enter Assignment" />
+                                 </children></HBox>
+                              <HBox alignment="CENTER" layoutY="341.0" prefHeight="79.0" prefWidth="800.0">
+                                 <children>
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="44.0" prefWidth="490.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="51.0" prefWidth="437.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#calculateGPAGrade" prefHeight="30.0" prefWidth="168.0" text="Calculate Grade" />
+                                                <Label fx:id="txtGPAGradeResult" contentDisplay="CENTER" prefHeight="18.0" prefWidth="64.0" text="Grade">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets left="30.0" right="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label text="pts">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="BOTTOM_CENTER" prefHeight="51.0" prefWidth="295.0">
+                                       <children>
+                                          <Button alignment="BOTTOM_CENTER" mnemonicParsing="false" onAction="#btnRemoveGPAAssignment" text="Remove Selected Assignment" />
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <TableView fx:id="tableViewGPAAssignments" layoutX="2.0" layoutY="74.0" prefHeight="277.0" prefWidth="797.0">
+                                 <columns>
+                                    <TableColumn fx:id="colGPAAssignment" minWidth="300.0" prefWidth="500.0" text="Assignment" />
+                                    <TableColumn fx:id="colGPAGrade" prefWidth="149.0" text="Grade" />
+                                    <TableColumn fx:id="colGPAWeight" prefWidth="149.0" text="Weight" />
+                                 </columns>
+                              </TableView>
+                           </children></AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
